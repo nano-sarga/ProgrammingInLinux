@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 
-int main(int arg_cout, char* arg_arr[] ) {
-	if (arg_cout != 4) {
+int main(int argc, char* argv[] ) {
+	if (argc != 4) {
 		std::cerr << "Enter arguments like this : " 
 			<< arg_arr[0] << "arg1 arg2 arg3\n";
 		return 1;
@@ -10,9 +10,11 @@ int main(int arg_cout, char* arg_arr[] ) {
 
 	int arg1, arg2, arg3;
 	std::stringstream ss1(arg_arr[1]), ss2(arg_arr[2]), ss3(arg_arr[3]);
-	ss1 >> arg1;
-	ss2 >> arg2;
-	ss3 >> arg3;
+
+ 	if (!(ss1 >> arg1) || !(ss2 >> arg2) || !(ss3 >> arg3)) {
+		std::cerr << "Error: all arguments must be integers\n";
+		return 1;
+	}
 
 	int min = arg1;
 	int max = arg1;
