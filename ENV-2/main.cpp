@@ -22,8 +22,8 @@ int main() {
     
     double constNum = 73;
     Complex numMulConst = num1 * constNum;
-    std::cout << "Multiply by " << constNum << " : " << "(" << num1 << ")" << "*" 
-                << "(" << num2 << ")" << " = " << numMulConst << std::endl;
+    std::cout << "Multiply by const : " << "(" << num1 << ")" << "*" 
+                 << constNum << " = " << numMulConst << std::endl;
 
     std::cout << std::endl;
     std::vector<Complex> nums = {
