@@ -1,0 +1,33 @@
+
+Absolute value - The distance of a number from zero on the number line.
+Addition - The process of combining two or more numbers to get their total.
+Algebra - A branch of mathematics dealing with symbols and the rules for manipulating them.
+Binary - A number system using only two digits: 0 and 1.
+Calculus - The study of change, through derivatives and integrals.
+Combinatorics - The branch of mathematics dealing with counting and arrangements.
+Derivative - A measure of how a function changes as its input changes.
+Equation - A statement that asserts the equality of two expressions.
+Exponent - The number that indicates how many times a base is multiplied by itself.
+Factor - A number that divides another number exactly.
+Factorial - The product of all positive integers up to a given number, denoted n!.
+Function - A relation between a set of inputs and a set of permissible outputs.
+Graph - A collection of nodes (vertices) and edges connecting some pairs of nodes.
+Greatest common divisor - The largest number that divides two or more integers without a remainder.
+Hypotenuse - The side opposite the right angle in a right triangle.
+Inequality - A relation expressing that one quantity is greater than or less than another.
+Integration - The process of finding the integral of a function.
+Intersection - The set containing elements common to two or more sets.
+Logarithm - The inverse operation to exponentiation.
+Matrix - A rectangular array of numbers arranged in rows and columns.
+Number theory - The study of integers and their properties.
+Permutation - An arrangement of objects in a specific order.
+Prime number - A natural number greater than 1 that has no positive divisors other than 1 and itself.
+Probability distribution - A function that describes the likelihood of outcomes in an experiment.
+Radian - The standard unit of angular measure in mathematics.
+Sequence - An ordered list of numbers or objects.
+Set - A collection of distinct objects considered as a whole.
+Set theory - The branch of mathematical logic that studies sets, or collections of objects.
+Statistics - The science of collecting, analyzing, and interpreting data.
+Trigonometry - The study of relationships between angles and sides of triangles.
+Union - The set containing all elements from two or more sets.
+Vector - A quantity having both magnitude and direction.
