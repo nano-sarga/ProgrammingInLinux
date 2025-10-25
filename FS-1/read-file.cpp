@@ -1,6 +1,6 @@
 #include <iostream>
-#include <fstream>
-#include <vector>
+#include <unistd.h>
+#include <stdio.h>
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -8,26 +8,37 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    const char* file_path = argv[1];
-    std::ifstream file(file_path, std::ios::binary);
-
-    if (!file.is_open()) {
-        std::cerr << "Error: cannot open file " << file_path << "\n";
+    int fd = open(argv[1], O_RDONLY);
+    if (fd < 0) {
+        std::cerr << "Error: cannot open file\n";
         return 1;
     }
 
-    const size_t buffer_size = 1024;
-    std::vector<char> buffer(buffer_size);
-
-    while (file) {
-        file.read(buffer.data(), buffer.size());
-        std::streamsize bytes_read = file.gcount();
-        if (bytes_read > 0) {
-            std::cout.write(buffer.data(), bytes_read);
+    char buf[4096];
+    ssize_t n;
+    while ((n = read(fd, buf, sizeof(buf))) > 0) {
+        ssize_t written = 0;
+        while (written < n) {
+            ssize_t w = write(STDOUT_FILENO, buf + written, n - written);
+            if (w < 0) {
+		    std::cerr << "Write error\n";
+                close(fd);
+                return 1;
+            }
+            written += w;
         }
     }
 
-    return 0;
-}
+    if (n < 0) {
+	    std::cerr << "Read error\n";
+        close(fd);
+        return 1;
+    }
 
+    if (close(fd) < 0) {
+        perror("close");
+        return 1;
+    }
+
+}
 
